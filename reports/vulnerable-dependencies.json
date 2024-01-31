@@ -1,0 +1,248 @@
+{
+  "actions": [
+    {
+      "action": "update",
+      "resolves": [
+        {
+          "id": 1094785,
+          "path": ".>@antfu/eslint-config>yaml-eslint-parser>yaml",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "module": "yaml",
+      "target": "2.3.4",
+      "depth": 4
+    },
+    {
+      "action": "update",
+      "resolves": [
+        {
+          "id": 1095367,
+          "path": ".>@antfu/eslint-config>jsonc-eslint-parser>semver",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "module": "semver",
+      "target": "7.5.4",
+      "depth": 4
+    },
+    {
+      "action": "review",
+      "module": "semver",
+      "resolves": [
+        {
+          "id": 1095365,
+          "path": ".>@antfu/eslint-config>eslint-plugin-unicorn>read-pkg-up>read-pkg>normalize-package-data>semver",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "vite",
+      "resolves": [
+        {
+          "id": 1095466,
+          "path": ".>vite",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    }
+  ],
+  "advisories": {
+    "1094785": {
+      "findings": [
+        {
+          "version": "2.1.0",
+          "paths": [
+            ". > @antfu/eslint-config@2.6.2 > eslint-plugin-yml@1.12.2 > yaml-eslint-parser@1.2.2 > yaml@2.1.0",
+            ". > @antfu/eslint-config@2.6.2 > yaml-eslint-parser@1.2.2 > yaml@2.1.0"
+          ]
+        }
+      ],
+      "metadata": null,
+      "vulnerable_versions": ">=2.0.0-5 <2.2.2",
+      "module_name": "yaml",
+      "severity": "high",
+      "github_advisory_id": "GHSA-f9xv-q969-pqx4",
+      "cves": [
+        "CVE-2023-2251"
+      ],
+      "access": "public",
+      "patched_versions": ">=2.2.2",
+      "cvss": {
+        "score": 7.5,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+      },
+      "updated": "2023-11-10T05:01:03.000Z",
+      "recommendation": "Upgrade to version 2.2.2 or later",
+      "cwe": [
+        "CWE-248"
+      ],
+      "found_by": null,
+      "deleted": null,
+      "id": 1094785,
+      "references": "- https://nvd.nist.gov/vuln/detail/CVE-2023-2251\n- https://github.com/eemeli/yaml/commit/984f5781ffd807e58cad3b5c8da1f940dab75fba\n- https://huntr.dev/bounties/4b494e99-5a3e-40d9-8678-277f3060e96c\n- https://github.com/advisories/GHSA-f9xv-q969-pqx4",
+      "created": "2023-04-24T15:30:34.000Z",
+      "reported_by": null,
+      "title": "Uncaught Exception in yaml",
+      "npm_advisory_id": null,
+      "overview": "Uncaught Exception in GitHub repository eemeli/yaml starting at version 2.0.0-5 and prior to 2.2.2.",
+      "url": "https://github.com/advisories/GHSA-f9xv-q969-pqx4"
+    },
+    "1095365": {
+      "findings": [
+        {
+          "version": "5.7.1",
+          "paths": [
+            ". > @antfu/eslint-config@2.6.2 > eslint-plugin-unicorn@50.0.1 > read-pkg-up@7.0.1 > read-pkg@5.2.0 > normalize-package-data@2.5.0 > semver@5.7.1"
+          ]
+        }
+      ],
+      "metadata": null,
+      "vulnerable_versions": "<5.7.2",
+      "module_name": "semver",
+      "severity": "moderate",
+      "github_advisory_id": "GHSA-c2qf-rxjj-qqgw",
+      "cves": [
+        "CVE-2022-25883"
+      ],
+      "access": "public",
+      "patched_versions": ">=5.7.2",
+      "cvss": {
+        "score": 5.3,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+      },
+      "updated": "2024-01-08T20:36:49.000Z",
+      "recommendation": "Upgrade to version 5.7.2 or later",
+      "cwe": [
+        "CWE-1333"
+      ],
+      "found_by": null,
+      "deleted": null,
+      "id": 1095365,
+      "references": "- https://nvd.nist.gov/vuln/detail/CVE-2022-25883\n- https://github.com/npm/node-semver/pull/564\n- https://github.com/npm/node-semver/commit/717534ee353682f3bcf33e60a8af4292626d4441\n- https://security.snyk.io/vuln/SNYK-JS-SEMVER-3247795\n- https://github.com/npm/node-semver/blob/main/classes/range.js#L97-L104\n- https://github.com/npm/node-semver/blob/main/internal/re.js#L138\n- https://github.com/npm/node-semver/blob/main/internal/re.js#L160\n- https://github.com/npm/node-semver/pull/585\n- https://github.com/npm/node-semver/commit/928e56d21150da0413a3333a3148b20e741a920c\n- https://github.com/npm/node-semver/pull/593\n- https://github.com/npm/node-semver/commit/2f8fd41487acf380194579ecb6f8b1bbfe116be0\n- https://github.com/advisories/GHSA-c2qf-rxjj-qqgw",
+      "created": "2023-06-21T06:30:28.000Z",
+      "reported_by": null,
+      "title": "semver vulnerable to Regular Expression Denial of Service",
+      "npm_advisory_id": null,
+      "overview": "Versions of the package semver before 7.5.2 on the 7.x branch, before 6.3.1 on the 6.x branch, and all other versions before 5.7.2 are vulnerable to Regular Expression Denial of Service (ReDoS) via the function new Range, when untrusted user data is provided as a range.",
+      "url": "https://github.com/advisories/GHSA-c2qf-rxjj-qqgw"
+    },
+    "1095367": {
+      "findings": [
+        {
+          "version": "7.3.7",
+          "paths": [
+            ". > @antfu/eslint-config@2.6.2 > eslint-plugin-jsonc@2.12.2 > jsonc-eslint-parser@2.4.0 > semver@7.3.7",
+            ". > @antfu/eslint-config@2.6.2 > eslint-plugin-perfectionist@2.5.0 > vue-eslint-parser@9.4.0 > semver@7.3.7",
+            ". > @antfu/eslint-config@2.6.2 > eslint-plugin-vue@9.20.1 > vue-eslint-parser@9.4.0 > semver@7.3.7",
+            ". > @antfu/eslint-config@2.6.2 > jsonc-eslint-parser@2.4.0 > semver@7.3.7",
+            ". > @antfu/eslint-config@2.6.2 > vue-eslint-parser@9.4.0 > semver@7.3.7"
+          ]
+        }
+      ],
+      "metadata": null,
+      "vulnerable_versions": ">=7.0.0 <7.5.2",
+      "module_name": "semver",
+      "severity": "moderate",
+      "github_advisory_id": "GHSA-c2qf-rxjj-qqgw",
+      "cves": [
+        "CVE-2022-25883"
+      ],
+      "access": "public",
+      "patched_versions": ">=7.5.2",
+      "cvss": {
+        "score": 5.3,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+      },
+      "updated": "2024-01-08T20:36:49.000Z",
+      "recommendation": "Upgrade to version 7.5.2 or later",
+      "cwe": [
+        "CWE-1333"
+      ],
+      "found_by": null,
+      "deleted": null,
+      "id": 1095367,
+      "references": "- https://nvd.nist.gov/vuln/detail/CVE-2022-25883\n- https://github.com/npm/node-semver/pull/564\n- https://github.com/npm/node-semver/commit/717534ee353682f3bcf33e60a8af4292626d4441\n- https://security.snyk.io/vuln/SNYK-JS-SEMVER-3247795\n- https://github.com/npm/node-semver/blob/main/classes/range.js#L97-L104\n- https://github.com/npm/node-semver/blob/main/internal/re.js#L138\n- https://github.com/npm/node-semver/blob/main/internal/re.js#L160\n- https://github.com/npm/node-semver/pull/585\n- https://github.com/npm/node-semver/commit/928e56d21150da0413a3333a3148b20e741a920c\n- https://github.com/npm/node-semver/pull/593\n- https://github.com/npm/node-semver/commit/2f8fd41487acf380194579ecb6f8b1bbfe116be0\n- https://github.com/advisories/GHSA-c2qf-rxjj-qqgw",
+      "created": "2023-06-21T06:30:28.000Z",
+      "reported_by": null,
+      "title": "semver vulnerable to Regular Expression Denial of Service",
+      "npm_advisory_id": null,
+      "overview": "Versions of the package semver before 7.5.2 on the 7.x branch, before 6.3.1 on the 6.x branch, and all other versions before 5.7.2 are vulnerable to Regular Expression Denial of Service (ReDoS) via the function new Range, when untrusted user data is provided as a range.",
+      "url": "https://github.com/advisories/GHSA-c2qf-rxjj-qqgw"
+    },
+    "1095466": {
+      "findings": [
+        {
+          "version": "5.0.11",
+          "paths": [
+            ". > unocss@0.58.3 > @unocss/astro@0.58.3 > @unocss/vite@0.58.3 > vite@5.0.11",
+            ". > unocss@0.58.3 > @unocss/astro@0.58.3 > vite@5.0.11",
+            ". > unocss@0.58.3 > @unocss/vite@0.58.3 > vite@5.0.11",
+            ". > unocss@0.58.3 > vite@5.0.11",
+            ". > @antfu/eslint-config@2.6.2 > eslint-plugin-vitest@0.3.20 > vitest@1.2.0 > vite@5.0.11",
+            ". > @antfu/eslint-config@2.6.2 > eslint-plugin-vitest@0.3.20 > vitest@1.2.0 > vite-node@1.2.0 > vite@5.0.11",
+            ". > @vitejs/plugin-vue@5.0.3 > vite@5.0.11",
+            ". > vite@5.0.11",
+            ". > vitest@1.2.0 > vite@5.0.11",
+            ". > vitest@1.2.0 > vite-node@1.2.0 > vite@5.0.11"
+          ]
+        }
+      ],
+      "metadata": null,
+      "vulnerable_versions": ">=5.0.0 <=5.0.11",
+      "module_name": "vite",
+      "severity": "high",
+      "github_advisory_id": "GHSA-c24v-8rfc-w8vw",
+      "cves": [
+        "CVE-2024-23331"
+      ],
+      "access": "public",
+      "patched_versions": ">=5.0.12",
+      "cvss": {
+        "score": 7.5,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+      },
+      "updated": "2024-01-19T21:58:48.000Z",
+      "recommendation": "Upgrade to version 5.0.12 or later",
+      "cwe": [
+        "CWE-178",
+        "CWE-200",
+        "CWE-284"
+      ],
+      "found_by": null,
+      "deleted": null,
+      "id": 1095466,
+      "references": "- https://github.com/vitejs/vite/security/advisories/GHSA-c24v-8rfc-w8vw\n- https://nvd.nist.gov/vuln/detail/CVE-2023-34092\n- https://nvd.nist.gov/vuln/detail/CVE-2024-23331\n- https://github.com/vitejs/vite/commit/0cd769c279724cf27934b1270fbdd45d68217691\n- https://github.com/vitejs/vite/commit/91641c4da0a011d4c5352e88fc68389d4e1289a5\n- https://github.com/vitejs/vite/commit/a26c87d20f9af306b5ce3ff1648be7fa5146c278\n- https://github.com/vitejs/vite/commit/eeec23bbc9d476c54a3a6d36e78455867185a7cb\n- https://vitejs.dev/config/server-options.html#server-fs-deny\n- https://github.com/advisories/GHSA-c24v-8rfc-w8vw",
+      "created": "2024-01-19T21:58:47.000Z",
+      "reported_by": null,
+      "title": "Vite dev server option `server.fs.deny` can be bypassed when hosted on case-insensitive filesystem",
+      "npm_advisory_id": null,
+      "overview": "### Summary\n[Vite dev server option](https://vitejs.dev/config/server-options.html#server-fs-deny) `server.fs.deny` can be bypassed on case-insensitive file systems using case-augmented versions of filenames. Notably this affects servers hosted on Windows.\n\nThis bypass is similar to https://nvd.nist.gov/vuln/detail/CVE-2023-34092 -- with surface area reduced to hosts having case-insensitive filesystems.\n\n### Patches\nFixed in vite@5.0.12, vite@4.5.2, vite@3.2.8, vite@2.9.17\n\n### Details\nSince `picomatch` defaults to case-sensitive glob matching, but the file server doesn't discriminate; a blacklist bypass is possible. \n\nSee `picomatch`  usage, where `nocase` is defaulted to `false`: https://github.com/vitejs/vite/blob/v5.1.0-beta.1/packages/vite/src/node/server/index.ts#L632\n\nBy requesting raw filesystem paths using augmented casing, the matcher derived from `config.server.fs.deny` fails to block access to sensitive files. \n\n### PoC\n**Setup**\n1. Created vanilla Vite project using `npm create vite@latest` on a Standard Azure hosted Windows 10 instance. \n    - `npm run dev -- --host 0.0.0.0`\n    - Publicly accessible for the time being here: http://20.12.242.81:5173/ \n2. Created dummy secret files, e.g. `custom.secret` and `production.pem`\n3. Populated `vite.config.js` with\n```javascript\nexport default { server: { fs: { deny: ['.env', '.env.*', '*.{crt,pem}', 'custom.secret'] } } }\n```\n\n**Reproduction**\n1. `curl -s http://20.12.242.81:5173/@fs//`\n    - Descriptive error page reveals absolute filesystem path to project root\n2. `curl -s http://20.12.242.81:5173/@fs/C:/Users/darbonzo/Desktop/vite-project/vite.config.js`\n    - Discoverable configuration file reveals locations of secrets\n3. `curl -s http://20.12.242.81:5173/@fs/C:/Users/darbonzo/Desktop/vite-project/custom.sEcReT`\n    - Secrets are directly accessible using case-augmented version of filename\n\n**Proof**\n![Screenshot 2024-01-19 022736](https://user-images.githubusercontent.com/907968/298020728-3a8d3c06-fcfd-4009-9182-e842f66a6ea5.png)\n\n### Impact\n**Who**\n- Users with exposed dev servers on environments with case-insensitive filesystems\n\n**What**\n- Files protected by `server.fs.deny` are both discoverable, and accessible",
+      "url": "https://github.com/advisories/GHSA-c24v-8rfc-w8vw"
+    }
+  },
+  "muted": [],
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 2,
+      "high": 2,
+      "critical": 0
+    },
+    "dependencies": 623,
+    "devDependencies": 0,
+    "optionalDependencies": 0,
+    "totalDependencies": 623
+  }
+}
