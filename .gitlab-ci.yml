@@ -1,11 +1,3 @@
-# stages:
-# - hello-stage
-
-
-# hello-job:
-#   stage: hello-stage
-#   script:
-#     - ./pipelines/lab2.sh
 
 stages:
   - hello-stage
