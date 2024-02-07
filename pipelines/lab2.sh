@@ -18,7 +18,7 @@ echo "Installation des dépendances du projet"
 pnpm vite build
 
 echo "Analyse statique"
-pnpm eslint .
+pnpm eslint . --fix
 
 # echo "Lancement du package créé" 
 # pnpm vite preview
