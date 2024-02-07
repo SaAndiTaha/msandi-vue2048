@@ -1,6 +1,8 @@
 stages:
   - hello-stage
 
+image: node:latest
+
 hello-job:
   stage: hello-stage
   script:
