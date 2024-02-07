@@ -1,3 +1,5 @@
+export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v12.16.1/bin
+pnpm setup
 ## Partie Pour aller plus loin ##
 echo "Identification des dépendances obsolètes"
 pnpm outdated --format json > reports/outdated-dependencies.json
@@ -7,7 +9,7 @@ echo "Identification des dépendances vulnérables"
 pnpm audit --json  > reports/vulnerable-dependencies.json   
 # pnpm audit --fix
 ## Partie Pour aller plus loin ##
-pnpm setup
+
 echo "Installation des dépendances du projet"
 pnpm install
 
