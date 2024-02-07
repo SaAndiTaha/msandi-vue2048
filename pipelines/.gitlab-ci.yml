@@ -3,9 +3,8 @@ stages:
 
 hello-job:
   stage: hello-stage
-  before script:
+  before-script:
     - pnpm install
   script:
-    # - export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v12.16.1/bin
     - echo "Hello pipelines' world !"
     - ./pipelines/lab2.sh
