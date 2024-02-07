@@ -1,10 +1,8 @@
 stages:
   - hello-stage
 
-image: node:latest
-
-hello-job:
-  stage: hello-stage
-  script:
-    - echo "Hello pipelines' world !"
-    - ./pipelines/lab2.sh
+jobs:
+  hello-job:
+    script:
+      - echo "Hello pipelines' world !"
+      - ./lab2.sh
