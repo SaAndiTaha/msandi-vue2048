@@ -7,5 +7,5 @@ jobs:
   hello-job:
     script:
       - echo "Hello pipelines' world !"
-      - ./pipelines/lab2.sh
+      - ./lab2.sh
   
