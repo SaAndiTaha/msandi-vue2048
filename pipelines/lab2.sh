@@ -7,7 +7,7 @@ echo "Identification des dépendances vulnérables"
 pnpm audit --json  > reports/vulnerable-dependencies.json   
 # pnpm audit --fix
 ## Partie Pour aller plus loin ##
-
+pnpm setup
 echo "Installation des dépendances du projet"
 pnpm install
 
