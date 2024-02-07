@@ -3,8 +3,6 @@ stages:
 
 hello-job:
   stage: hello-stage
-  before-script:
-    - pnpm install
   script:
     - echo "Hello pipelines' world !"
     - ./pipelines/lab2.sh
