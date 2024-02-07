@@ -4,5 +4,6 @@ stages:
 hello-job:
   stage: hello-stage
   script:
+    - export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v12.16.1/bin
     - echo "Hello pipelines' world !"
     - ./pipelines/lab2.sh
