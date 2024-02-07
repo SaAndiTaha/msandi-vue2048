@@ -1,10 +1,18 @@
-
 stages:
-  - hello-stage
+- hello-stage
 
-jobs:
-  hello-job:
-    script:
-      - echo "Hello pipelines' world !"
-      - ./pipelines/lab2.sh
+
+hello-job:
+  stage: hello-stage
+  script:
+    - ./pipelines/lab2.sh
+
+# stages:
+#   - hello-stage
+
+# jobs:
+#   hello-job:
+#     script:
+#       - echo "Hello pipelines' world !"
+#       - ./pipelines/lab2.sh
   
