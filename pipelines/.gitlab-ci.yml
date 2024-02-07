@@ -3,7 +3,7 @@ stages:
 
 
 hello-job:
-    stage: hello stage
+    stage: hello-stage
     script:
       - echo "Hello pipelines' world !"
       - ./pipelines/lab2.sh
