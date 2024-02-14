@@ -65,3 +65,4 @@ Par défaut les jobs à l'intérieur d'un stage s'exécutent en parallèle, modi
 - Ajouter des conditions pour que ces 2 jobs ne soient exécutées que lorsque le pipeline est a été déclenché de manière programmée dans le temps
 - Lancer le pipeline en utilsant l'API GitLab
     - Vous pouvez utilisez pour cela un client HTTP comme l'extension [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) de vscode ou [curl](https://curl.se/) depuis la ligne de commande
+    
