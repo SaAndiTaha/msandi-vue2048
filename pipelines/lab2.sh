@@ -1,3 +1,5 @@
+export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v12.16.1/bin
+pnpm setup
 ## Partie Pour aller plus loin ##
 echo "Identification des dépendances obsolètes"
 pnpm outdated --format json > reports/outdated-dependencies.json
@@ -18,7 +20,7 @@ echo "Installation des dépendances du projet"
 pnpm vite build
 
 echo "Analyse statique"
-pnpm eslint .
+pnpm eslint . --fix
 
 # echo "Lancement du package créé" 
 # pnpm vite preview

@@ -1,0 +1,79 @@
+{
+  "@antfu/eslint-config": {
+    "current": "2.6.2",
+    "latest": "2.6.3",
+    "wanted": "2.6.2",
+    "isDeprecated": false,
+    "dependencyType": "devDependencies"
+  },
+  "@iconify/json": {
+    "current": "2.2.169",
+    "latest": "2.2.177",
+    "wanted": "2.2.169",
+    "isDeprecated": false,
+    "dependencyType": "devDependencies"
+  },
+  "@types/node": {
+    "current": "20.11.4",
+    "latest": "20.11.13",
+    "wanted": "20.11.4",
+    "isDeprecated": false,
+    "dependencyType": "devDependencies"
+  },
+  "@vue/test-utils": {
+    "current": "2.4.3",
+    "latest": "2.4.4",
+    "wanted": "2.4.3",
+    "isDeprecated": false,
+    "dependencyType": "devDependencies"
+  },
+  "vite": {
+    "current": "5.0.11",
+    "latest": "5.0.12",
+    "wanted": "5.0.11",
+    "isDeprecated": false,
+    "dependencyType": "devDependencies"
+  },
+  "vitest": {
+    "current": "1.2.0",
+    "latest": "1.2.2",
+    "wanted": "1.2.0",
+    "isDeprecated": false,
+    "dependencyType": "devDependencies"
+  },
+  "vue": {
+    "current": "3.4.14",
+    "latest": "3.4.15",
+    "wanted": "3.4.14",
+    "isDeprecated": false,
+    "dependencyType": "dependencies"
+  },
+  "jsdom": {
+    "current": "23.2.0",
+    "latest": "24.0.0",
+    "wanted": "23.2.0",
+    "isDeprecated": false,
+    "dependencyType": "devDependencies"
+  },
+  "@unocss/reset": {
+    "current": "0.58.3",
+    "latest": "0.58.4",
+    "wanted": "0.58.3",
+    "isDeprecated": false,
+    "dependencyType": "devDependencies"
+  },
+  "unocss": {
+    "current": "0.58.3",
+    "latest": "0.58.4",
+    "wanted": "0.58.3",
+    "isDeprecated": false,
+    "dependencyType": "dependencies"
+  },
+  "unplugin-auto-import": {
+    "current": "0.17.3",
+    "latest": "0.17.5",
+    "wanted": "0.17.3",
+    "isDeprecated": false,
+    "dependencyType": "devDependencies"
+  }
+}
