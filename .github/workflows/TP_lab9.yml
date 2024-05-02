@@ -26,7 +26,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         # Cette étape récupère le code source du référentiel
-
+      - name: setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+         version: latest
+         
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+         node-version: latest
+         cache: pnpm
       - name: Build App
         run: |
           pnpm install
