@@ -1,0 +1,101 @@
+name: CI_LAB9
+
+on:
+  pull_request:
+    branches:
+      - main
+  # Le workflow est déclenché lors de l'ouverture ou de la mise à jour d'une pull request sur la branche 'main'
+  push:
+    branches:
+      - main
+  # Le workflow est déclenché lors d'une action de push sur la branche 'main'
+  workflow_dispatch:
+    inputs:
+      static_analysis:
+        description: 'Static analysis'
+        required: true
+        default: 'true'
+  # Le workflow peut être déclenché manuellement via l'interface utilisateur GitHub. 
+  # L'entrée 'static_analysis' permet de spécifier si l'analyse statique doit être effectuée ou non.
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Le travail 'build' s'exécute sur un environnement Ubuntu latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        # Cette étape récupère le code source du référentiel
+
+      - name: Build App
+        run: |
+          pnpm install
+          pnpm build
+        # Cette étape installe les dépendances avec 'pnpm install' et construit l'application avec 'pnpm build'
+
+      - name: Typechecking and linting
+        if: github.event_name == 'pull_request' || github.event.inputs.static_analysis == 'true'
+        run: |
+          pnpm type-check
+          pnpm int
+        # Cette étape effectue la vérification des types avec 'pnpm type-check' et l'exécution des linters avec 'pnpm int'.
+        # Elle n'est exécutée que lors d'une pull request ou lorsque l'entrée 'static_analysis' est définie sur 'true'.
+
+      - name: Unit tests
+        if: github.event_name == 'pull_request' || github.event.inputs.static_analysis == 'true'
+        run: |
+          pnpm test
+        # Cette étape exécute les tests unitaires avec 'pnpm test'.
+        # Elle n'est exécutée que lors d'une pull request ou lorsque l'entrée 'static_analysis' est définie sur 'true'.
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: package
+          path: dist/
+          retention-days: ${{ github.ref == 'refs/heads/main' && 7 || 1 }}
+        # Cette étape télécharge l'artefact de construction (le dossier 'dist/') vers GitHub Actions.
+        # La durée de conservation de l'artefact dépend de la branche : 7 jours pour la branche 'main', 1 jour pour les autres branches.
+
+deploy:
+    needs: build
+    # Le travail 'deploy' dépend du travail 'build' terminé avec succès
+    runs-on: ubuntu-latest
+    # Le travail 'deploy' s'exécute sur un environnement Ubuntu latest
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: package
+          path: dist/
+        # Cette étape récupère l'artefact de construction téléchargé précédemment
+
+     # Déploiement vers l'environnement QA
+      - name: Deploy to QA
+        # Utilisation de l'action Azure Static Web Apps Deploy pour déployer vers l'environnement QA
+        uses: Azure/static-web-apps-deploy@v1
+        # Configuration des paramètres nécessaires pour le déploiement vers QA
+        with:
+          # Jeton d'API pour accéder à Azure Static Web Apps pour l'environnement QA
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_QA_TOKEN }}
+          # Action spécifiée comme "upload" pour télécharger l'application
+          action: "upload"
+          # Emplacement de l'application à déployer, obtenu à partir de l'espace de travail GitHub
+          app_location: ${{ github.workspace }}
+          # Option pour ignorer la construction de l'application, car elle a déjà été construite précédemment
+          skip_app_build: true
+
+      # Déploiement vers l'environnement PROD
+      - name: Deploy to PROD
+        # Utilisation de l'action Azure Static Web Apps Deploy pour déployer vers l'environnement PROD
+        uses: Azure/static-web-apps-deploy@v1
+        # Configuration des paramètres nécessaires pour le déploiement vers PROD
+        with:
+          # Jeton d'API pour accéder à Azure Static Web Apps pour l'environnement PROD
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_PROD_TOKEN }}
+          # Action spécifiée comme "upload" pour télécharger l'application
+          action: "upload"
+          # Emplacement de l'application à déployer, obtenu à partir de l'espace de travail GitHub
+          app_location: ${{ github.workspace }}
+          # Option pour ignorer la construction de l'application, car elle a déjà été construite précédemment
+          skip_app_build: true
