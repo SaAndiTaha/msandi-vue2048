@@ -79,7 +79,7 @@ jobs:
             with:
              action: upload
              app-name: app-vue2048-prod
-             azure_static_web_apps_api_token: ${{ secrets.AZURE_TOKEN_PROD }}
+             azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_THANKFUL_HILL_05E4BB510 }}
              app_artifact_location: './dist/'
              app_location: '/'
    
@@ -88,6 +88,6 @@ jobs:
             with:
              action: upload
              app-name: app-vue2048-qa
-             azure_static_web_apps_api_token: ${{ secrets.AZURE_TOKEN_QA }}
+             azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_THANKFUL_HILL_05E4BB510 }}
              app_artifact_location: './dist/'
              app_location: '/'
