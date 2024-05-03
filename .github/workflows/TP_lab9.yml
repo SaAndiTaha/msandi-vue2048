@@ -46,7 +46,7 @@ jobs:
         if: github.event_name == 'pull_request' || github.event.inputs.static_analysis == 'true'
         run: |
           pnpm type-check
-          pnpm int
+          pnpm lint
         # Cette étape effectue la vérification des types avec 'pnpm type-check' et l'exécution des linters avec 'pnpm int'.
         # Elle n'est exécutée que lors d'une pull request ou lorsque l'entrée 'static_analysis' est définie sur 'true'.
 
